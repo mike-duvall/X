@@ -11,10 +11,8 @@ public class NumberPrettifierTest {
         // Given
         NumberPrettifier numberPrettifier = new NumberPrettifier();
 
-
         // When
         String prettifiedNumber = numberPrettifier.prettify(532);
-
 
         // Then
         String expectedPrettifiedNumber = "532";
