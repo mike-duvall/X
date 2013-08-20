@@ -1,5 +1,7 @@
 package util;
 
+import java.io.BufferedReader;
+
 public class NumberPrettifier {
 
     // This will need to accept numbers bigger than Integer

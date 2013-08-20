@@ -10,3 +10,12 @@ dependencies {
     testCompile 'org.easytesting:fest-assert-core:2.0M10'
     testCompile 'junit:junit:4.11'
 }
+
+
+apply from: "checkstyle.gradle"
+
+checkstyle {
+    sourceSets = [ sourceSets.main ]
+}
+
+//apply from: "code-coverage.gradle"

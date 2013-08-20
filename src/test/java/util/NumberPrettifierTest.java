@@ -1,7 +1,7 @@
 package util;
 
 import org.junit.Test;
-import static org.fest.assertions.api.Assertions.*;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class NumberPrettifierTest {
 
@@ -18,6 +18,21 @@ public class NumberPrettifierTest {
         String expectedPrettifiedNumber = "532";
         assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
     }
+
+
+
+//    @Test
+//    public void shouldPrettify1000000() {
+//        // Given
+//        NumberPrettifier numberPrettifier = new NumberPrettifier();
+//
+//        // When
+//        String prettifiedNumber = numberPrettifier.prettify(1000000);
+//
+//        // Then
+//        String expectedPrettifiedNumber = "1M";
+//        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
+//    }
 }
 
 
