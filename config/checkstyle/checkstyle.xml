@@ -29,7 +29,7 @@
     </module>
     <module name="MethodLength">
       <property name="severity" value="error"/>
-      <property name="max" value="10"/>
+      <property name="max" value="15"/>
     </module>
     <module name="ParameterNumber">
       <property name="severity" value="error"/>
