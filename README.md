@@ -7,12 +7,22 @@ Multiple test cases working
 
 
 
+Completed
+----------
+* Handle example scenarios
+    * input: 1000000 output: 1M
+
+    * input: 2500000.34 output: 2.5M
+
+    * input: 532 output: 532
+
+* Add checkstyle checks
+
+
 Todos
 ------
-
 * Handle example scenarios
-    * -input: 1123456789
-      -output: 1.1B
+    * input: 1123456789 output: 1.1B
 
 
 * Handle additional scenarios
@@ -32,17 +42,3 @@ Todos
 
 
 
-Completed
-----------
-
-* Handle example scenarios
-    input: 1000000
-    output: 1M
-
-    input: 2500000.34
-    output: 2.5M
-
-    input: 532
-    output: 532
-
-* Add checkstyle checks
