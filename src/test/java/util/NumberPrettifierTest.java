@@ -48,6 +48,23 @@ public class NumberPrettifierTest {
         assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
     }
 
+
+    @Test
+    public void shouldPrettify1123456789() {
+        // Given
+        NumberPrettifier numberPrettifier = new NumberPrettifier();
+
+        // When
+        String prettifiedNumber = numberPrettifier.prettify(new Double(1123456789));
+
+        // Then
+        String expectedPrettifiedNumber = "1.1B";
+        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
+    }
+
+
+
+
 }
 
 
