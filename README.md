@@ -7,7 +7,33 @@ First working test added
 
 
 
-Todos:
+Todos
+------
+
+* Handle example scenarios
+    input: 1123456789
+    output: 1.1B
+
+
+* Handle additional scenarios
+    * 2M
+    * 1B
+    * 1T
+    * 1.2T
+    * others as determine them
+
+* Handle corner cases
+    * Zero
+* Handle error scenarios
+    * Negative numbers
+    * Numbers over Quadrillion
+* Throughout:  Cleanup and refactor code
+* Write overview
+
+
+
+Completed
+----------
 
 * Handle example scenarios
     input: 1000000
@@ -19,10 +45,4 @@ Todos:
     input: 532
     output: 532
 
-    input: 1123456789
-    output: 1.1B
-
-* Add checkstyle and code coverage checks
-* Handle corner cases
-* Handle error scenarios
-* Write overview
+* Add checkstyle checks
