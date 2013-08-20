@@ -21,8 +21,22 @@ public class NumberPrettifierTest {
 
 
 
+    @Test
+    public void shouldPrettify1000000() {
+        // Given
+        NumberPrettifier numberPrettifier = new NumberPrettifier();
+
+        // When
+        String prettifiedNumber = numberPrettifier.prettify(1000000);
+
+        // Then
+        String expectedPrettifiedNumber = "1M";
+        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
+    }
+
+
 //    @Test
-//    public void shouldPrettify1000000() {
+//    public void shouldPrettify2500000point34() {
 //        // Given
 //        NumberPrettifier numberPrettifier = new NumberPrettifier();
 //
@@ -30,9 +44,10 @@ public class NumberPrettifierTest {
 //        String prettifiedNumber = numberPrettifier.prettify(1000000);
 //
 //        // Then
-//        String expectedPrettifiedNumber = "1M";
+//        String expectedPrettifiedNumber = "2.5M";
 //        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
 //    }
+
 }
 
 
