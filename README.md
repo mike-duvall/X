@@ -11,8 +11,8 @@ Todos
 ------
 
 * Handle example scenarios
-    input: 1123456789
-    output: 1.1B
+    * -input: 1123456789
+      -output: 1.1B
 
 
 * Handle additional scenarios
