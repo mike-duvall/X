@@ -30,7 +30,7 @@ public class NumberPrettifier {
         char  firstDigit = stringNumber.charAt(0);
         char  secondDigit = stringNumber.charAt(1);
         if( secondDigit == '0') {
-            return "1" + sizeSuffix;
+            return firstDigit + sizeSuffix;
         }
         else {
             return "" + firstDigit + "." + secondDigit + sizeSuffix;

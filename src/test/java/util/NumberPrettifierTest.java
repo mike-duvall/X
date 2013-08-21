@@ -43,6 +43,17 @@ public class NumberPrettifierTest {
     }
 
 
+    @Test
+    public void shouldPrettify2000000() {
+        validatePrettifiedNumber(2000000, "2M");
+    }
+
+
+//    * 1B
+//    * 1T
+//    * 1.2T
+
+
 
 
 }
