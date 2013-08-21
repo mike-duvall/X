@@ -15,9 +15,10 @@ Todos
     * Others?
 
 * Handle error scenarios
-    * Quadrillion and over
+    * Negative numbers
 * Throughout:  Cleanup and refactor code
 * Write overview
+    * Include assumptions on requirements for negative numbers
 
 
 
