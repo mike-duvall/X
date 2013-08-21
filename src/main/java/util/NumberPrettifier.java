@@ -1,6 +1,8 @@
 package util;
 
 
+import java.text.DecimalFormat;
+
 public class NumberPrettifier {
 
 
@@ -23,15 +25,25 @@ public class NumberPrettifier {
 
 
     private String handleNumbersOverSixDigits(Double aNumber) {
-        String stringNumber = aNumber.toString();
+        String sizeSuffix = determineSizeSuff(aNumber);
+        String stringNumber = new DecimalFormat("#").format(aNumber);
         char  firstDigit = stringNumber.charAt(0);
         char  secondDigit = stringNumber.charAt(1);
         if( secondDigit == '0') {
-            return "1M";
+            return "1" + sizeSuffix;
         }
         else {
-            return "" + firstDigit + "." + secondDigit + "M";
+            return "" + firstDigit + "." + secondDigit + sizeSuffix;
         }
+    }
+
+    private String determineSizeSuff(Double aNumber) {
+        String sizeSuffix = null;
+        if( aNumber > 999999999)
+            sizeSuffix = "B";
+        else if( aNumber > 999999)
+            sizeSuffix = "M";
+        return sizeSuffix;
     }
 
 }
