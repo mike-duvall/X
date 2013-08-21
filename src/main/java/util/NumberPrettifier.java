@@ -36,7 +36,9 @@ public class NumberPrettifier {
 
     private String determineSizeSuff(Double aNumber) {
         String sizeSuffix = null;
-        if( aNumber > 999999999)
+        if( aNumber > 999999999999D)
+            sizeSuffix = "T";
+        else if( aNumber > 999999999)
             sizeSuffix = "B";
         else if( aNumber > 999999)
             sizeSuffix = "M";

@@ -53,8 +53,18 @@ public class NumberPrettifierTest {
         validatePrettifiedNumber(1000000000, "1B");
     }
 
-//    * 1T
-//    * 1.2T
+
+    @Test
+    public void shouldPrettifyOneTrillion() {
+        validatePrettifiedNumber(1000000000000D, "1T");
+
+    }
+
+    @Test
+    public void shouldPrettifyOnePointTwoTrillion() {
+        validatePrettifiedNumber(1200000000000D, "1.2T");
+
+    }
 
 
 
