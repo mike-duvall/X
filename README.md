@@ -3,7 +3,7 @@ number_prettifier
 
 Status - In Progress
 
-Multiple test cases working
+Most test cases working.  Need to decide what to do about negative numbers and then do final code review and cleanup.
 
 
 
