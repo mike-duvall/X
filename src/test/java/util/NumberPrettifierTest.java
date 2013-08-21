@@ -6,7 +6,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class NumberPrettifierTest {
 
 
-    private void validatePrettifiedNumber(Double aNumber, String expectedPrettifiedValue) {
+    private void validatePrettifiedNumber(double aNumber, String expectedPrettifiedValue) {
         // Given
         NumberPrettifier numberPrettifier = new NumberPrettifier();
 
@@ -21,7 +21,7 @@ public class NumberPrettifierTest {
 
     @Test
     public void shouldPrettify1000000() {
-        validatePrettifiedNumber(new Double(1000000), "1M");
+        validatePrettifiedNumber(1000000, "1M");
     }
 
 
@@ -32,14 +32,14 @@ public class NumberPrettifierTest {
 
     @Test
     public void shouldPrettifySmallNumber() {
-        validatePrettifiedNumber(new Double(532), "532");
+        validatePrettifiedNumber(532, "532");
     }
 
 
 
     @Test
     public void shouldPrettify1123456789() {
-        validatePrettifiedNumber(new Double(1123456789), "1.1B");
+        validatePrettifiedNumber(1123456789, "1.1B");
     }
 
 
