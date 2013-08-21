@@ -6,60 +6,40 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class NumberPrettifierTest {
 
 
-    @Test
-    public void shouldPrettifySmallNumber() {
+    private void validatePrettifiedNumber(Double aNumber, String expectedPrettifiedValue) {
         // Given
         NumberPrettifier numberPrettifier = new NumberPrettifier();
 
         // When
-        String prettifiedNumber = numberPrettifier.prettify(new Double(532));
+        String prettifiedNumber = numberPrettifier.prettify(aNumber);
 
         // Then
-        String expectedPrettifiedNumber = "532";
-        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
-    }
+        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedValue);
 
+    }
 
 
     @Test
     public void shouldPrettify1000000() {
-        // Given
-        NumberPrettifier numberPrettifier = new NumberPrettifier();
-
-        // When
-        String prettifiedNumber = numberPrettifier.prettify(new Double(1000000));
-
-        // Then
-        String expectedPrettifiedNumber = "1M";
-        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
+        validatePrettifiedNumber(new Double(1000000), "1M");
     }
 
 
     @Test
     public void shouldPrettify2500000point34() {
-        // Given
-        NumberPrettifier numberPrettifier = new NumberPrettifier();
-
-        // When
-        String prettifiedNumber = numberPrettifier.prettify(2500000.34);
-
-        // Then
-        String expectedPrettifiedNumber = "2.5M";
-        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
+        validatePrettifiedNumber(2500000.34, "2.5M");
     }
+
+    @Test
+    public void shouldPrettifySmallNumber() {
+        validatePrettifiedNumber(new Double(532), "532");
+    }
+
 
 
     @Test
     public void shouldPrettify1123456789() {
-        // Given
-        NumberPrettifier numberPrettifier = new NumberPrettifier();
-
-        // When
-        String prettifiedNumber = numberPrettifier.prettify(new Double(1123456789));
-
-        // Then
-        String expectedPrettifiedNumber = "1.1B";
-        assertThat(prettifiedNumber).isEqualTo(expectedPrettifiedNumber);
+        validatePrettifiedNumber(new Double(1123456789), "1.1B");
     }
 
 
