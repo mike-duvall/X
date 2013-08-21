@@ -38,6 +38,8 @@ public class NumberPrettifier {
     // CHECKSTYLE:OFF
     private String determineSizeSuffix(Double aNumber) {
         String sizeSuffix = null;
+        if( aNumber > 999999999999999D)
+            throw new NumberTooLargeException("Number was too large:" + aNumber);
         if( aNumber > 999999999999D)
             sizeSuffix = "T";
         else if( aNumber > 999999999)
@@ -47,6 +49,14 @@ public class NumberPrettifier {
         return sizeSuffix;
     }
     // CHECKSTYLE:ON
+
+    public class NumberTooLargeException extends RuntimeException {
+
+        public NumberTooLargeException(String message) {
+            super(message);
+        }
+    }
+
 
 
 }

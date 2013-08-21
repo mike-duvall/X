@@ -10,18 +10,12 @@ Multiple test cases working
 Todos
 ------
 
-* Handle additional scenarios
-    * 2M
-    * 1B
-    * 1T
-    * 1.2T
-    * others as determine them
 
 * Handle corner cases
-    * Zero
+    * Others?
+
 * Handle error scenarios
-    * Negative numbers
-    * Numbers over Quadrillion
+    * Quadrillion and over
 * Throughout:  Cleanup and refactor code
 * Write overview
 
@@ -39,3 +33,19 @@ Completed
     * input: 1123456789 output: 1.1B
 
 * Add checkstyle checks
+
+* Handle additional scenarios
+    * 2M
+    * 1B
+    * 1T
+    * 1.2T
+
+* Handle corner cases
+    * Zero
+    * 999999
+    * 999999999
+    * 999999999999
+    * 1234556.892834323
+
+* Handle error scenarios
+    * Quadrillion and over

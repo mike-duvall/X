@@ -63,6 +63,45 @@ public class NumberPrettifierTest {
     @Test
     public void shouldPrettifyOnePointTwoTrillion() {
         validatePrettifiedNumber(1200000000000D, "1.2T");
+    }
+
+    @Test
+    public void shouldPrettify0() {
+        validatePrettifiedNumber(0, "0");
+    }
+
+    @Test
+    public void shouldPrettify999999() {
+        validatePrettifiedNumber(999999, "999999");
+    }
+
+    @Test
+    public void shouldPrettify999999999() {
+        validatePrettifiedNumber(999999999, "9.9M");
+    }
+
+    @Test
+    public void shouldPrettify999999999999() {
+        validatePrettifiedNumber(999999999999D, "9.9B");
+    }
+
+    @Test
+    public void shouldPrettify999999999999999() {
+        validatePrettifiedNumber(999999999999999D, "9.9T");
+    }
+
+    @Test
+    public void shouldPrettifyLargeDecimalComponent() {
+        validatePrettifiedNumber(1234556.892834323, "1.2M");
+    }
+
+    @Test(expected = NumberPrettifier.NumberTooLargeException.class)
+    public void shouldThrowErrorForNumbers1QuadrillionAndOver() {
+        // Given
+        NumberPrettifier numberPrettifier = new NumberPrettifier();
+
+        // When
+        numberPrettifier.prettify(1000000000000000D);
 
     }
 
