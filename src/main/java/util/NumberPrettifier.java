@@ -22,7 +22,7 @@ public class NumberPrettifier {
 
 
     private String handleNumbersOverSixDigits(Double aNumber) {
-        String sizeSuffix = determineSizeSuff(aNumber);
+        String sizeSuffix = determineSizeSuffix(aNumber);
         String stringNumber = new DecimalFormat("#").format(aNumber);
         char  firstDigit = stringNumber.charAt(0);
         char  secondDigit = stringNumber.charAt(1);
@@ -34,7 +34,7 @@ public class NumberPrettifier {
         }
     }
 
-    private String determineSizeSuff(Double aNumber) {
+    private String determineSizeSuffix(Double aNumber) {
         String sizeSuffix = null;
         if( aNumber > 999999999999D)
             sizeSuffix = "T";
