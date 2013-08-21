@@ -6,9 +6,6 @@ import java.text.DecimalFormat;
 public class NumberPrettifier {
 
 
-    // Note:  Right now I'm using strict TDD
-    // so some of this will be hard-coded until
-    // I get to a test that forces otherwise
     public String prettify(Double aNumber) {
         if( aNumber > 999999) {
             return handleNumbersOverSixDigits(aNumber);

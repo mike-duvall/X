@@ -48,8 +48,11 @@ public class NumberPrettifierTest {
         validatePrettifiedNumber(2000000, "2M");
     }
 
+    @Test
+    public void shouldPrettify1000000000() {
+        validatePrettifiedNumber(1000000000, "1B");
+    }
 
-//    * 1B
 //    * 1T
 //    * 1.2T
 
