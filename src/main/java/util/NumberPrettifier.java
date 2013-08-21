@@ -8,20 +8,20 @@ public class NumberPrettifier {
 
     public String prettify(Double aNumber) {
         if( aNumber > 999999) {
-            return handleNumbersOverSixDigits(aNumber);
+            return prettifyNumbersOverSixDigits(aNumber);
         }
         else {
-            return handleNumbersSixDigitsOrUnder(aNumber);
+            return prettifyNumbersSixDigitsOrUnder(aNumber);
         }
     }
 
 
-    private String handleNumbersSixDigitsOrUnder(Double aNumber) {
+    private String prettifyNumbersSixDigitsOrUnder(Double aNumber) {
         return new Integer(aNumber.intValue()).toString();
     }
 
 
-    private String handleNumbersOverSixDigits(Double aNumber) {
+    private String prettifyNumbersOverSixDigits(Double aNumber) {
         String sizeSuffix = determineSizeSuffix(aNumber);
         String stringNumber = new DecimalFormat("#").format(aNumber);
         char  firstDigit = stringNumber.charAt(0);
@@ -34,6 +34,8 @@ public class NumberPrettifier {
         }
     }
 
+
+    // CHECKSTYLE:OFF
     private String determineSizeSuffix(Double aNumber) {
         String sizeSuffix = null;
         if( aNumber > 999999999999D)
@@ -44,5 +46,7 @@ public class NumberPrettifier {
             sizeSuffix = "M";
         return sizeSuffix;
     }
+    // CHECKSTYLE:ON
+
 
 }
