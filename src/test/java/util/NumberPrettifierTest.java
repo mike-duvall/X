@@ -96,15 +96,22 @@ public class NumberPrettifierTest {
     }
 
     @Test(expected = NumberPrettifier.NumberTooLargeException.class)
-    public void shouldThrowErrorForNumbers1QuadrillionAndOver() {
+    public void shouldThrowExceptionForNumbers1QuadrillionAndOver() {
         // Given
         NumberPrettifier numberPrettifier = new NumberPrettifier();
 
         // When
         numberPrettifier.prettify(1000000000000000D);
-
     }
 
+    @Test(expected = NumberPrettifier.NumberTooSmallException.class)
+    public void shouldThrowExceptionForNegativeNumbers() {
+        // Given
+        NumberPrettifier numberPrettifier = new NumberPrettifier();
+
+        // When
+        numberPrettifier.prettify(-1D);
+    }
 
 
 

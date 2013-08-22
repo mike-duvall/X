@@ -7,12 +7,20 @@ public class NumberPrettifier {
 
 
     public String prettify(Double aNumber) {
-        if( aNumber > 999999) {
+        if(aNumber < 0)
+            throw new NumberTooSmallException("Number was too small:" + aNumber);
+        else if( aNumber > 999999999999999D)
+            throw new NumberTooLargeException("Number was too large:" + aNumber);
+        else
+            return prettifyValidNumber(aNumber);
+    }
+
+    private String prettifyValidNumber(Double aNumber) {
+        if( aNumber > 999999)
             return prettifyNumbersOverSixDigits(aNumber);
-        }
-        else {
+        else
             return prettifyNumbersSixDigitsOrUnder(aNumber);
-        }
+
     }
 
 
@@ -38,8 +46,6 @@ public class NumberPrettifier {
     // CHECKSTYLE:OFF
     private String determineSizeSuffix(Double aNumber) {
         String sizeSuffix = null;
-        if( aNumber > 999999999999999D)
-            throw new NumberTooLargeException("Number was too large:" + aNumber);
         if( aNumber > 999999999999D)
             sizeSuffix = "T";
         else if( aNumber > 999999999)
@@ -58,5 +64,9 @@ public class NumberPrettifier {
     }
 
 
-
+    public class NumberTooSmallException extends RuntimeException {
+        public NumberTooSmallException(String message) {
+            super(message);
+        }
+    }
 }

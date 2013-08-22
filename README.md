@@ -10,13 +10,11 @@ Most test cases working.  Need to decide what to do about negative numbers and t
 Todos
 ------
 
-
 * Handle corner cases
     * Others?
 
-* Handle error scenarios
-    * Negative numbers
 * Throughout:  Cleanup and refactor code
+
 * Write overview
     * Include assumptions on requirements for negative numbers
 
@@ -41,7 +39,7 @@ Completed
     * 1T
     * 1.2T
 
-* Handle corner cases
+* Handle edge cases
     * Zero
     * 999999
     * 999999999
@@ -50,3 +48,4 @@ Completed
 
 * Handle error scenarios
     * Quadrillion and over
+    * Negative numbers
