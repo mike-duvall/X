@@ -18,4 +18,4 @@ checkstyle {
     sourceSets = [ sourceSets.main ]
 }
 
-//apply from: "code-coverage.gradle"
+apply from: "code-coverage.gradle"

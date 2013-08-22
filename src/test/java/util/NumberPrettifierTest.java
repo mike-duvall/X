@@ -44,6 +44,12 @@ public class NumberPrettifierTest {
 
 
     @Test
+    public void shouldPrettify1000001() {
+        validatePrettifiedNumber(1000001, "1M");
+    }
+
+
+    @Test
     public void shouldPrettify2000000() {
         validatePrettifiedNumber(2000000, "2M");
     }
