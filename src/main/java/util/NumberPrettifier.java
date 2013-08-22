@@ -33,15 +33,17 @@ public class NumberPrettifier {
 
     private String prettifyNumbersOverSixDigits(Double aNumber) {
         String sizeSuffix = determineSizeSuffix(aNumber);
-        String stringNumber = new DecimalFormat("#").format(aNumber);
-        char  firstDigit = stringNumber.charAt(0);
-        char  secondDigit = stringNumber.charAt(1);
-        if( secondDigit == '0') {
+        String inputNumberAsString = convertDoubleToFlatString(aNumber);
+        char  firstDigit = inputNumberAsString.charAt(0);
+        char  secondDigit = inputNumberAsString.charAt(1);
+        if( secondDigit == '0')
             return firstDigit + sizeSuffix;
-        }
-        else {
-            return "" + firstDigit + "." + secondDigit + sizeSuffix;
-        }
+        else
+            return firstDigit + "." + secondDigit + sizeSuffix;
+    }
+
+    private String convertDoubleToFlatString(Double aNumber) {
+        return new DecimalFormat("#").format(aNumber);
     }
 
 
