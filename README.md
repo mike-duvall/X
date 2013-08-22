@@ -1,24 +1,14 @@
 number_prettifier
 =================
 
-Status - In Progress
-
-Most test cases working.  Need to decide what to do about negative numbers and then do final code review and cleanup.
+Status - Completed
 
 
 
 Todos
 ------
 
-* Handle corner cases
-    * Others?
-
-* Throughout:  Cleanup and refactor code
-
-* Write overview
-    * Include assumptions on requirements for negative numbers
-    * Include comments on not using brackets in some if,then,else statements, ala Uncle Bob
-
+* None
 
 
 Completed
@@ -50,3 +40,12 @@ Completed
 * Handle error scenarios
     * Quadrillion and over
     * Negative numbers
+
+* Handle corner cases
+    * Others?
+
+* Throughout:  Cleanup and refactor code
+
+* Write overview
+    * Include assumptions on requirements for negative numbers
+    * Include comments on not using brackets in some if,then,else statements, ala Uncle Bob
