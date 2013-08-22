@@ -7,12 +7,15 @@ public class NumberPrettifier {
 
 
     public String prettify(Double aNumber) {
+        validateNumberIsLegal(aNumber);
+        return prettifyValidNumber(aNumber);
+    }
+
+    private void validateNumberIsLegal(Double aNumber) {
         if(aNumber < 0)
             throw new NumberTooSmallException("Number was too small:" + aNumber);
         else if( aNumber > 999999999999999D)
             throw new NumberTooLargeException("Number was too large:" + aNumber);
-        else
-            return prettifyValidNumber(aNumber);
     }
 
     private String prettifyValidNumber(Double aNumber) {
@@ -20,7 +23,6 @@ public class NumberPrettifier {
             return prettifyNumbersOverSixDigits(aNumber);
         else
             return prettifyNumbersSixDigitsOrUnder(aNumber);
-
     }
 
 
@@ -45,7 +47,7 @@ public class NumberPrettifier {
 
     // CHECKSTYLE:OFF
     private String determineSizeSuffix(Double aNumber) {
-        String sizeSuffix = null;
+        String sizeSuffix = "";
         if( aNumber > 999999999999D)
             sizeSuffix = "T";
         else if( aNumber > 999999999)
