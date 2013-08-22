@@ -34,13 +34,28 @@ public class NumberPrettifier {
     private String prettifyNumbersOverSixDigits(Double aNumber) {
         String sizeSuffix = determineSizeSuffix(aNumber);
         String inputNumberAsString = convertDoubleToFlatString(aNumber);
+        if( decimalPointNeeded(inputNumberAsString))
+            return formatStringWithDecimal(inputNumberAsString, sizeSuffix);
+        else
+            return formatStringWithoutDecimal(inputNumberAsString, sizeSuffix);
+    }
+
+    private boolean decimalPointNeeded(String numberAsString) {
+        char  secondDigit = numberAsString.charAt(1);
+        return  secondDigit != '0';
+    }
+
+    private String formatStringWithoutDecimal(String inputNumberAsString, String sizeSuffix) {
+        char  firstDigit = inputNumberAsString.charAt(0);
+        return firstDigit + sizeSuffix;
+    }
+
+    private String formatStringWithDecimal(String inputNumberAsString, String sizeSuffix) {
         char  firstDigit = inputNumberAsString.charAt(0);
         char  secondDigit = inputNumberAsString.charAt(1);
-        if( secondDigit == '0')
-            return firstDigit + sizeSuffix;
-        else
-            return firstDigit + "." + secondDigit + sizeSuffix;
+        return firstDigit + "." + secondDigit + sizeSuffix;
     }
+
 
     private String convertDoubleToFlatString(Double aNumber) {
         return new DecimalFormat("#").format(aNumber);
