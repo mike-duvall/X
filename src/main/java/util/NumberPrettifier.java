@@ -6,9 +6,10 @@ import java.text.DecimalFormat;
 public class NumberPrettifier {
 
 
-    public static final double ONE_TRILLION = 1000000000000D;
-    public static final int ONE_BILLION = 1000000000;
-    public static final int ONE_MILLION = 1000000;
+    public static final int ONE_MILLION        = 1000000;
+    public static final int ONE_BILLION        = 1000000000;
+    public static final double ONE_TRILLION    = 1000000000000D;
+    public static final double ONE_QUADRILLION = 1000000000000000D;
 
     public String prettify(Double aNumber) {
         validateNumberIsLegal(aNumber);
@@ -17,9 +18,9 @@ public class NumberPrettifier {
 
     private void validateNumberIsLegal(Double aNumber) {
         if(aNumber < 0)
-            throw new NumberTooSmallException("Number was too small:" + aNumber);
-        else if( aNumber > 999999999999999D)
-            throw new NumberTooLargeException("Number was too large:" + aNumber);
+            throw new NumberTooSmallException("Cannot format negative numbers.  Number received was:" + aNumber);
+        else if( aNumber >= ONE_QUADRILLION)
+            throw new NumberTooLargeException("Cannot format numbers larger than 1 quadrillion.  Number received was:" + aNumber);
     }
 
     private String prettifyValidNumber(Double aNumber) {
@@ -63,11 +64,13 @@ public class NumberPrettifier {
 
 
     private String convertDoubleToFlatString(Double aNumber) {
+        // Double.toString() will return exponential notation
+        // so using DecimalFormat to get flat string
         return new DecimalFormat("#").format(aNumber);
     }
 
 
-    // I have checkstyle configured to enforce a max allowed cyclomatic complexity of 3
+    // I have checkstyle configured to enforce a max allowed cyclomatic complexity of 3,
     // but the complexity of this method is 4.  I'm happy with this method, so
     // I've excluded it from checkstyle checking
     // CHECKSTYLE:OFF

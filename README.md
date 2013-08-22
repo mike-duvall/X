@@ -17,6 +17,7 @@ Todos
 
 * Write overview
     * Include assumptions on requirements for negative numbers
+    * Include comments on not using brackets in some if,then,else statements, ala Uncle Bob
 
 
 
