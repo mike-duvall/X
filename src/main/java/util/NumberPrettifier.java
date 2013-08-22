@@ -6,6 +6,10 @@ import java.text.DecimalFormat;
 public class NumberPrettifier {
 
 
+    public static final double ONE_TRILLION = 1000000000000D;
+    public static final int ONE_BILLION = 1000000000;
+    public static final int ONE_MILLION = 1000000;
+
     public String prettify(Double aNumber) {
         validateNumberIsLegal(aNumber);
         return prettifyValidNumber(aNumber);
@@ -63,14 +67,17 @@ public class NumberPrettifier {
     }
 
 
+    // I have checkstyle configured to enforce a max allowed cyclomatic complexity of 3
+    // but the complexity of this method is 4.  I'm happy with this method, so
+    // I've excluded it from checkstyle checking
     // CHECKSTYLE:OFF
     private String determineSizeSuffix(Double aNumber) {
         String sizeSuffix = "";
-        if( aNumber > 999999999999D)
+        if( aNumber >= ONE_TRILLION)
             sizeSuffix = "T";
-        else if( aNumber > 999999999)
+        else if( aNumber >= ONE_BILLION)
             sizeSuffix = "B";
-        else if( aNumber > 999999)
+        else if( aNumber >= ONE_MILLION)
             sizeSuffix = "M";
         return sizeSuffix;
     }
